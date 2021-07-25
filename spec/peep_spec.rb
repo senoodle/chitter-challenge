@@ -10,7 +10,7 @@ describe Chitter do
       connection.exec("INSERT INTO chitter (peep) VALUES('My second peep.');")
       connection.exec("INSERT INTO chitter (peep) VALUES('My third peep.');")
 
-      chitters = Chitter.all
+      chitters = Peep.all
 
       expect(chitters).to include('My first peep.')
       expect(chitters).to include('My second peep.')
@@ -20,9 +20,9 @@ describe Chitter do
 
   describe '.add' do
     it 'adds a peep' do
-      Chitter.add('Add peep')
+      Peep.add('Test peep')
 
-      expect(Chitter.all).to include 'Add peep'
+      expect(Peep.all).to include 'Test peep'
     end
   end
 

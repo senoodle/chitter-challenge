@@ -11,7 +11,7 @@ class Peep
     result.map { |chitter| chitter['peep'] }
   end
 
-  def self.add(peep:)
+  def self.add(peep)
 
     DatabaseConnection.query("INSERT INTO chitter (peep) VALUES ('#{peep}')")
   end
